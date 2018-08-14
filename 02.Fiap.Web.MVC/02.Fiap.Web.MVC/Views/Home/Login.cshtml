@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<form action="/Home/Login" method="post">
+    <div class="form-group">
+        <label>Login</label>
+        <input type="text" name="usuario" id="idLogin" class="form-control" placeholder="e-mail ou nome"/>
+    </div>
+    <div class="form-group">
+        <label>Senha</label>
+        <input type="password" name="senha" id="idSenha" class="form-control" />
+    </div>
+    <input type="submit" value="Entrar" class="btn btn-primary"/>
+</form>
+
+@TempData["msg"]<br />
+

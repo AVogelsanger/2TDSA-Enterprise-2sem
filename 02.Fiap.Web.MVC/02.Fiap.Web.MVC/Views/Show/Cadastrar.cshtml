@@ -1,0 +1,41 @@
+﻿@model _02.Fiap.Web.MVC.Models.Show
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+
+<h2>Cadastrar</h2>
+
+<div class="alert alert-success">
+    @TempData["msg"]
+</div>
+<ul>
+    <li>@ViewBag.xereca</li>
+    <li>@Model.Banda</li>
+    <li>@Model.Data</li>
+    <li>@(Model.Estudante?"Estudante":"inteira")</li>
+    <li>@Model.Valor</li>
+</ul>
+
+<form action="/Show/Cadastrar" method="post">
+    <div class="form-group">
+        <label>Data</label>
+        <input type="date" name="data" id="idData" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Valor</label>
+        <input type="text" name="valor" id="idValor" class="form-control" placeholder="R$" />
+    </div>
+    <div class="form-group">
+        <label>Banda</label>
+        <input type="text" name="banda" id="idBanda" class="form-control" />
+    </div><br />
+    <div class="form-group">
+        <input value="true" type="checkbox" name="estudante" id="idEstudante" />
+        <label>Estudante</label>
+    </div>
+    <input type="submit" value="OK" class="btn btn-primary" />
+</form>
+
+

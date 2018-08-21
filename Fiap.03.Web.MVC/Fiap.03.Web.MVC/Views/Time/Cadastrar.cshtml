@@ -1,0 +1,45 @@
+﻿@model Fiap._03.Web.MVC.Models.Time
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar</h2>
+
+@Atalho.Message(TempData["msg"])
+
+
+@using (Html.BeginForm())
+{
+  <div class="form-group">
+      @Html.LabelFor(t => t.Nome)
+      @Html.TextBoxFor(time => time.Nome, new { @class = "form-control" })
+  </div>
+  <div class="form-group">
+      @Html.LabelFor(t => t.Pontuacao)
+      @Html.TextBoxFor(time => time.Pontuacao, new { @class = "form-control" })
+  </div>
+  <div class="form-group">
+      @Html.LabelFor(t => t.Classificacao)
+      @Html.TextBoxFor(time => time.Classificacao, new { @class = "form-control" })
+  </div>
+  <div class="form-group">
+      @Html.CheckBoxFor(time => time.Patrocinio)
+      @Html.LabelFor(t => t.Patrocinio)
+  </div>
+  <div class="form-group">
+      @Html.LabelFor(t => t.Descricao)
+      @Html.TextBoxFor(time => time.Descricao, new { @class = "form-control" })
+  </div>
+  <div class="form-group">
+      @Html.LabelFor(t => t.DataFundacao)
+      @Html.TextBoxFor(time => time.DataFundacao, new { @class = "form-control" })
+  </div>
+  <div>
+      @Html.LabelFor(t => t.Liga)
+      @Html.DropDownListFor(t => t.Liga, ViewBag.listaLiga as SelectList)
+  </div><br />
+  @Atalho.Submit("Cadastrar")
+
+}
+

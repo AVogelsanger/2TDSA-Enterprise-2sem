@@ -1,0 +1,20 @@
+﻿@model FIap03.Web.MVC.Exercicio.Models.Refeicao
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar</h2>
+
+<div class="form-group">
+    @Html.LabelFor(r => r.Nome)
+    @Html.TextBoxFor(refeicao => refeicao.Nome, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.CheckBoxFor(refeicao => refeicao.Vegetariano)
+    @Html.LabelFor(r => r.Vegetariano)
+</div>
+<div class="form-group">
+    @Html.LabelFor(r => r.Bebida)
+    @Html.TextBoxFor(refeicao => refeicao.Bebida, new { @class = "form-control" })
+</div><br />

@@ -1,0 +1,30 @@
+﻿@model List<Fiap._03.Web.MVC.Models.Time>
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Pontuacao</th>
+        <th>Classificacao</th>
+        <th>Patrocinio</th>
+        <th>Descricao</th>
+        <th>DataFundacao</th>
+        <th>Liga</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Nome</td>
+        <td>@item.Pontuacao</td>
+        <td>@item.Classificacao</td>
+        <td>@(item.Patrocinio?"Sim":"Não")</td>
+        <td>@item.Descricao</td>
+        <td>@item.DataFundacao.ToShortDateString()</td>
+        <td>@item.Liga</td>
+    </tr>
+    }
+</table>

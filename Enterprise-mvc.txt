@@ -1,0 +1,32 @@
+model - regra de negocio
+
+view - interface com o usuario
+
+Controller - faz a comunicação entre model e view
+recebe/interpreta a URL 
+a primeira / indentifica a classe controler desejada
+a segunda / 
+
+URL - aciona um método dentro do nosso Controller
+URL:/HOME(classe-controller)/INDEX(método-action)
+
+URL:HOME/LOGIN
+URL:/SHOW/CADASTRAR
+
+
+----------------------------------------------------- 21/08/2018
+URL:/CLIENTE/LISTAR - Nome do método
+      |nome da classe(controller)
+	Cliente Controller
+
+Views
+  |_ Cliente
+	|_Listar.CSHTML
+
+ _
+|_| -> Controller
+  <---------| 
+     ViewBag
+     TempData
+     Objeto 	
+

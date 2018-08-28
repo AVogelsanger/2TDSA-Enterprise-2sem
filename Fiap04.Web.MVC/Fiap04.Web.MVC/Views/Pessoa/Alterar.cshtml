@@ -1,0 +1,24 @@
+﻿@model Fiap04.Web.MVC.Models.Pessoa
+@{
+    ViewBag.Title = "Alterar";
+}
+
+<h2>Alterar</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(p => p.PessoaId)
+    <div class="form-group">
+        @Html.LabelFor(p => p.Nome)
+        @Html.TextBoxFor(pessoa => pessoa.Nome, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(p => p.DataNascimento)
+        @Html.TextBoxFor(p => p.DataNascimento, "{0:dd/MM/yyyy}" , new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(p => p.Dependentes)
+        @Html.TextBoxFor(p => p.Dependentes, new { @class = "form-control" })
+    </div><br />
+    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+}

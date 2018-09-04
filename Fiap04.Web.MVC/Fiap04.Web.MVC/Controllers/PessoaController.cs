@@ -13,6 +13,14 @@ namespace Fiap04.Web.MVC.Controllers
     {
         private ImigracaoContext _context = new ImigracaoContext();
 
+        [HttpGet]
+        public ActionResult Pesquisar(string nomeBusca)
+        {
+            // fazer a busca por nome e retornar a lista para a página
+            var lista = _context.Pessoas.Where(p => nomeBusca.Contains(nomeBusca)).ToList();
+            return View("Listar",lista);
+        }
+
         [HttpPost]
         public ActionResult Excluir(int id)
         {

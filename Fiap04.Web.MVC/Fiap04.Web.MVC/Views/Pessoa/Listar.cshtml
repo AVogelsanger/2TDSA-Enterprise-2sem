@@ -13,6 +13,12 @@
     </div>
 }
 
+@using (Html.BeginForm("Pesquisar","Pessoa",FormMethod.Get, new { @class = "form-inline" }))
+{
+    @Html.TextBox("nomeBusca", null, new {placeholder = "Digite o nome", @class = "form-control" })
+    @Ajudante.Botao("Buscar")
+}
+
 <table class="table table-striped">
     <tr>
         <th>Código</th>

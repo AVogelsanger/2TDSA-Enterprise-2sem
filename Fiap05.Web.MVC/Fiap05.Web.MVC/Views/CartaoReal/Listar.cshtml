@@ -1,0 +1,23 @@
+﻿@model List<Fiap05.Web.MVC.Models.CartaoReal>
+
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Cartões Reais</h2>
+
+<table>
+    <tr>
+        <th>Número</th>
+        <th>CVV</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Numero</td>
+        <td>@item.CVV</td>
+    </tr>
+    }
+</table>
+

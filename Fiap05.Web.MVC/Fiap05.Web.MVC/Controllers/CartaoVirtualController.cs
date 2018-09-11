@@ -13,9 +13,29 @@ namespace Fiap05.Web.MVC.Controllers
         private FiapBankContext _context = new FiapBankContext();
 
         [HttpGet]
+        public ActionResult Pesquisar(int numero)
+        {
+            var lista = _context.CartoesVirtuais.Where(c => c.CartaoRealId == numero).ToList();
+            CarregarDropDown();
+
+
+            //pagina listar, com a lista de cartões virtuais
+            return View("Listar", lista);
+        }
+
+        private void CarregarDropDown()
+        {
+            var dropLista = _context.CartoeReais.ToList();
+            ViewBag.listaCartao = new SelectList(dropLista, "CartaoRealId", "Numero");
+        }
+
+        [HttpGet]
         public ActionResult Listar()
         {
             var lista = _context.CartoesVirtuais.Include("CartaoReal").ToList();
+            //valores para dropdown
+            var dropLista = _context.CartoeReais.ToList();
+            ViewBag.listaCartao = new SelectList(dropLista, "CartaoRealId", "Numero");
             return View(lista);
         }
 

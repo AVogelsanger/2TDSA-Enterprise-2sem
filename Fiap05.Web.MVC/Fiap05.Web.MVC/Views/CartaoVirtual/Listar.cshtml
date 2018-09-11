@@ -5,7 +5,14 @@
 
 <h2>Cartões Virtuais</h2>
 
-<table>
+@using (Html.BeginForm("Pesquisar", "CartaoVirtual", FormMethod.Get, new { @class = "form-inline"}))
+{
+    @Html.DropDownList("numero", ViewBag.listaCartao as SelectList, 
+                        new { @class = "form-control"})
+    <input type="submit" value="Buscar" class="btn btn-success" />
+}
+<br />
+<table class="table table-striped">
     <tr>
         <th>Número</th>
         <th>Utilizado</th>

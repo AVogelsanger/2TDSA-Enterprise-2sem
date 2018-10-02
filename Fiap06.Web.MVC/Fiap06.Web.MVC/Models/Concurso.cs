@@ -10,7 +10,7 @@ namespace Fiap06.Web.MVC.Models
     {
         [Key]
         public int  Numero { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime Data { get; set; }
         public decimal Premio { get; set; }
         public bool Acumulado { get; set; }
         public IList<Aposta> Apostas { get; set; }

@@ -12,16 +12,25 @@ namespace Fiap06.Web.MVC.Controllers
     {
         private UnitOfWork _unit = new UnitOfWork();
 
+        [HttpGet]
         public ActionResult Cadastrar()
         {
-            var lista = _unit.ConcursoRepository.Listar();
-            ViewBag.concursos = new SelectList(lista, "Numero", "Numero"); 
+            CarregarSelectConcurso();
             return View();
         }
 
-        [HttpGet]
+        private void CarregarSelectConcurso()
+        {
+            var lista = _unit.ConcursoRepository.Listar();
+            ViewBag.concursos = new SelectList(lista, "Numero", "Numero");
+        }
+
+        [HttpPost]
         public ActionResult Cadastrar(Aposta aposta)
         {
+            _unit.ApostaRepository.Cadastrar(aposta);
+            _unit.Salvar();
+            TempData["msg"] = "Aposta registrada!";
             return View();
         }
     }

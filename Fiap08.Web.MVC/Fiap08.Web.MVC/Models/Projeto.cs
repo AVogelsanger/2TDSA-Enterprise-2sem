@@ -13,6 +13,7 @@ namespace Fiap08.Web.MVC.Models
         public DateTime DataLimite { get; set; }
         public decimal InvestimentoAtual { get; set; }
         public bool DeducaoIR { get; set; }
+
         public Patrocinador Patrocinador { get; set; }
         public int PatrocinadorId { get; set; }
     }

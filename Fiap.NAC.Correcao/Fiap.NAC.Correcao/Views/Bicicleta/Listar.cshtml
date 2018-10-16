@@ -1,0 +1,25 @@
+﻿@model List<Fiap.NAC.Correcao.Models.Bicicleta>
+
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+
+<table class="table table-striped">
+        
+    <tr>
+        <th>Modelo</th>
+        <th>Valor</th>
+        <th>Categoria</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+    <tr>
+        <td>@item.Modelo</td>
+        <td>@item.Valor</td>
+        <td>@item.Categoria.Nome</td>
+    </tr>
+    }
+</table>
+

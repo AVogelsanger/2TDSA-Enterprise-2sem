@@ -1,0 +1,25 @@
+﻿@model FIap09.Web.MVC.Models.Genero
+
+@{
+    ViewBag.Title = "Cadastrar Gênero";
+}
+
+<h2>Cadastrar Gênero</h2>
+
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success">@TempData["msg"]</div>
+}
+
+@using (Html.BeginForm())
+{
+    <div class=" form-group">
+        @Html.LabelFor(g => g.Nome)
+        @Html.TextBoxFor(g => g.Nome, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <input type="submit" value="Salvar" class="btn btn-primary" />
+    </div>
+
+}
